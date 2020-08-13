@@ -1,0 +1,21 @@
+body {
+    background-image: url('/static/assets/images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+h1 {
+    color: #8d6e63;
+    font-size:5vw;
+}
+p {
+    text-align: center;
+}
+.carousel{
+    height: 70vh !important;
+}
+.carousel .carousel-item {
+    height: 700px !important;
+    width:300px !important;
+    }
