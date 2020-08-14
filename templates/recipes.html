@@ -2,16 +2,36 @@
 
 {% block content %}
 
-<h1>Recipes 101</h1>
-{% for recipe in recipes %}
-    {{ recipe.category_name }}
-    {{ recipe.user_name }}
-    {{ recipe.recipe_name }}
-    {{ recipe.brief_description }}
-    {{ recipe.ingredients }}
-    {{ recipe.preparation }}
-    {{ recipe.preparation_time }}
-    {{ recipe.photo_url }}
-{% endfor %}
+<h2>All Recipes</h2>
+    <div class="container col s12 m10 offset-m1 grey-text text-darken-2 content-container mt-20">
+        <div class="row">
+
+
+                {% for recipe in recipes %}
+                <div class="col s12 m6 l6 xl4 recipe-card">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ recipe.photo_url }}" alt=" {{ recipe.recipe_name }}">
+                        </div>
+                        <div class="card-content">
+                            <h6> {{ recipe.recipe_name }}</h6>
+                            <p class="grey-text">{{ recipe.category_name }}</p>
+                            <p class="grey-text author-text">By: <span class="grey-text text-darken-3">{{ recipe.user_name }}</span></p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="waves-effect waves-light btn-small ">View</a>
+                            <a href="#" class="waves-effect waves-light btn-small blue darken-2" ><i class="small material-icons">edit</i></a>
+                            <a href="#" class="waves-effect waves-light btn-small red darken-2  modal-trigger"><i class="small material-icons">delete</i></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+        </div>
+
+
+
+    </div>
+
 
 {% endblock %}
