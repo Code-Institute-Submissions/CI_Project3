@@ -20,11 +20,18 @@ def home():
 @app.route('/recipes/')
 def get_recipes():
     return render_template('recipes.html', recipes=mongo.db.recipes.find())
-
+#Route to single recipe
 @app.route('/recipe/<recipe_id>')
 def single_recipe(recipe_id):
     this_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html", recipe=this_recipe)
+#Route to recipes in a single category
+@app.route("/category/<selected_category>")
+def category(selected_category):
+    all_recipes = mongo.db.recipes.find()
+    return render_template("category.html",
+                           recipes=all_recipes,
+                           selected_category=selected_category)
 
 if __name__ == '__main__':
     app.run()
