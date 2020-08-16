@@ -1,6 +1,7 @@
 
 from flask import Flask, render_template, url_for
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
@@ -19,6 +20,11 @@ def home():
 @app.route('/recipes/')
 def get_recipes():
     return render_template('recipes.html', recipes=mongo.db.recipes.find())
+
+@app.route('/recipe/<recipe_id>')
+def single_recipe(recipe_id):
+    this_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html", recipe=this_recipe)
 
 if __name__ == '__main__':
     app.run()
