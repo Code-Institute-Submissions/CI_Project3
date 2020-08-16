@@ -19,10 +19,10 @@
     <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
       <li><a href="{{ url_for('get_recipes') }}">All</a></li>
-      <li><a href="#!">Espressos</a></li>
-      <li><a href="#!">Americanos</a></li>
-      <li><a href="#!">Lattes</a></li>
-      <li><a href="#!">Cappucinos</a></li>
+      <li><a href="{{ url_for('category', selected_category = 'Espressos')}}">Espressos</a></li>
+      <li><a href="{{ url_for('category', selected_category = 'Americanos')}}">Americanos</a></li>
+      <li><a href="{{ url_for('category', selected_category = 'Lattes')}}">Lattes</a></li>
+      <li><a href="{{ url_for('category', selected_category = 'Cappucinos')}}">Cappucinos</a></li>
 </ul>
 <nav class="brown">
   <div class="nav-wrapper">
@@ -46,7 +46,7 @@
         <div class="container">
   {% block content %}
     {# Template inserted here #}
-  {% endblock %}
+  {% endblock %}</div>
     </main>
 
 
