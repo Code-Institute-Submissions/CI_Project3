@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffepedia</title>
+    <title>Coffeebook</title>
      <!-- Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- CSS -->
@@ -17,28 +18,37 @@
     <header>
     <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+      <li><a href="{{ url_for('get_recipes') }}">All</a></li>
+      <li><a href="#!">Espressos</a></li>
+      <li><a href="#!">Americanos</a></li>
+      <li><a href="#!">Lattes</a></li>
+      <li><a href="#!">Cappucinos</a></li>
 </ul>
 <nav class="brown">
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Logo</a>
+      <span class="material-icons">local_cafe</span>
+    <a href="{{ url_for('home') }}" class="brand-logo">Coffeebook</a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
+      <li><a href="sass.html">Home</a></li>
+      <li><a href="badges.html">Add a recipe</a></li>
       <!-- Dropdown Trigger -->
-      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Browse recipes<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
   </div>
 </nav>
-
+ <!-- Mobile sidebar -->
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+    </ul>
 </header>
-<div class="container">
+    <main class="main">
+        <div class="container">
   {% block content %}
     {# Template inserted here #}
   {% endblock %}
+    </main>
+
 
 
 </div>
@@ -46,8 +56,8 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">CoffeBook</h5>
-                <p class="grey-text text-lighten-4">Get inspired or start creating your favourite coffe recipe.</p>
+                <h5 class="white-text">CoffeeBook</h5>
+                <p class="grey-text text-lighten-4">Get inspired or start creating your favourite coffee recipe.</p>
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Coffes</h5>
@@ -56,6 +66,7 @@
                   <li><a class="grey-text text-lighten-3" href="#!">Lattes</a></li>
                   <li><a class="grey-text text-lighten-3" href="#!">Cappucinos</a></li>
                   <li><a class="grey-text text-lighten-3" href="#!">Espresos</a></li>
+
                 </ul>
               </div>
             </div>
