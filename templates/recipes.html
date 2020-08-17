@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<h2>All Recipes</h2>
-    <div class="container col s12 m10 offset-m1 grey-text text-darken-2 content-container mt-20">
+    <h2>All Recipes</h2>
+    <div class="container col s12 m10 offset-m1 grey-text text-darken-2 content-container ">
         <div class="row">
 
-                {% for recipe in recipes %}
+            {% for recipe in recipes %}
                 <div class="col s12 m6 l6 xl4 recipe-card">
                     <div class="card">
                         <div class="card-image">
@@ -15,19 +15,21 @@
                         <div class="card-content">
                             <h6> {{ recipe.recipe_name }}</h6>
                             <p class="grey-text">{{ recipe.category_name }}</p>
-                            <p class="grey-text author-text">By: <span class="grey-text text-darken-3">{{ recipe.user_name }}</span></p>
+                            <p class="grey-text author-text">By: <span
+                                    class="grey-text text-darken-3">{{ recipe.user_name }}</span></p>
                         </div>
                         <div class="card-action">
                             <a href="/recipe/{{ recipe._id }}" class="waves-effect waves-light btn-small ">View</a>
-                            <a href="#" class="waves-effect waves-light btn-small blue darken-2" ><i class="small material-icons">edit</i></a>
-                            <a href="#" class="waves-effect waves-light btn-small red darken-2  modal-trigger"><i class="small material-icons">delete</i></a>
+                            <a href="/edit_recipe/{{ recipe._id }}" class="waves-effect waves-light btn-small blue darken-2"><i
+                                    class="small material-icons">edit</i></a>
+                            <a href="/delete_recipe/{{ recipe._id }}"  class="waves-effect waves-light btn-small red darken-2  modal-trigger"><i
+                                    class="small material-icons">delete</i></a>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
+            {% endfor %}
 
         </div>
-
 
 
     </div>
