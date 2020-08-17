@@ -54,5 +54,30 @@ def insert_recipe():
     return redirect(url_for('get_recipes'))
 
 
+# Route for editing recipe
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    this_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    categories = list(mongo.db.categories.find())
+    return render_template('editrecipe.html', recipe=this_recipe,
+                           categories=categories)
+
+
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
+    # Update the article after editing it using JSON
+    recipes = mongo.db.recipes
+    recipes.update({'_id': ObjectId(recipe_id)}, {
+        'recipe_name': request.form.get('recipe_name'),
+        'user_name': request.form.get('user_name'),
+        'category_name': request.form.get('category_name'),
+        'photo_url': request.form.get('photo_url'),
+        'preparation_time': request.form.get('preparation_time'),
+        'brief_description': request.form.get('brief_description'),
+        'ingredients': request.form.get('ingredients'),
+        'preparation': request.form.get('preparation')})
+    return redirect(url_for('get_recipes'))
+
+
 if __name__ == '__main__':
     app.run()
