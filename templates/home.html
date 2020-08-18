@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<h1>Welcome to Coffebook</h1>
-    <h4>Get inspired or start creating your favourite coffe recipe.</h4>
+    <h1>Welcome to Coffebook</h1>
+    <h4>Get inspired or start creating your favourite coffee recipe.</h4>
     <p>Discover recipes for..</p>
-  <div class="carousel">
-    <a class="carousel-item" href="#one!"><img src="/static/assets/images/latte.jpg"></a>
-    <a class="carousel-item" href="#two!"><img src="/static/assets/images/americano.jpg"></a>
-    <a class="carousel-item" href="#three!"><img src="/static/assets/images/espresso.jpg"></a>
-    <a class="carousel-item" href="#four!"><img src="/static/assets/images/cappucino.jpg"></a>
-  </div>
+    <div class="carousel">
+        <a class="carousel-item" href="{{ url_for('category', selected_category = 'Lattes') }}"><img src="/static/assets/images/latte.jpg"></a>
+        <a class="carousel-item" href="{{ url_for('category', selected_category = 'Americanos') }}"><img src="/static/assets/images/americano.jpg"></a>
+        <a class="carousel-item" href="{{ url_for('category', selected_category = 'Espressos') }}"><img src="/static/assets/images/espresso.jpg"></a>
+        <a class="carousel-item" href="{{ url_for('category', selected_category = 'Cappucinos') }}"><img src="/static/assets/images/cappucino.jpg"></a>
+    </div>
 
 {% endblock %}
