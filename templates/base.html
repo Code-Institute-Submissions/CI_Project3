@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffeebook</title>
-     <!-- Material Design Icons -->
+    <!-- Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
@@ -15,75 +15,79 @@
 </head>
 <body>
 
-    <header>
+<header>
     <!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-      <li><a href="{{ url_for('get_recipes') }}">All</a></li>
-      <li><a href="{{ url_for('category', selected_category = 'Espressos')}}">Espressos</a></li>
-      <li><a href="{{ url_for('category', selected_category = 'Americanos')}}">Americanos</a></li>
-      <li><a href="{{ url_for('category', selected_category = 'Lattes')}}">Lattes</a></li>
-      <li><a href="{{ url_for('category', selected_category = 'Cappucinos')}}">Cappucinos</a></li>
-</ul>
-<nav class="brown">
-  <div class="nav-wrapper">
-      <span class="material-icons">local_cafe</span>
-    <a href="{{ url_for('home') }}" class="brand-logo">Coffeebook</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Home</a></li>
-      <li><a href="badges.html">Add a recipe</a></li>
-      <!-- Dropdown Trigger -->
-      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Browse recipes<i class="material-icons right">arrow_drop_down</i></a></li>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{{ url_for('get_recipes') }}">All</a></li>
+        <li><a href="{{ url_for('category', selected_category = 'Espressos') }}">Espressos</a></li>
+        <li><a href="{{ url_for('category', selected_category = 'Americanos') }}">Americanos</a></li>
+        <li><a href="{{ url_for('category', selected_category = 'Lattes') }}">Lattes</a></li>
+        <li><a href="{{ url_for('category', selected_category = 'Cappucinos') }}">Cappucinos</a></li>
     </ul>
-  </div>
-</nav>
- <!-- Mobile sidebar -->
+    <nav class="brown">
+        <div class="nav-wrapper">
+            <a href="{{ url_for('home') }}" class="brand-logo">Coffeebook</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Browse recipes<i
+                        class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Mobile sidebar -->
     <ul class="sidenav" id="mobile-demo">
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+        <li><a href="{{ url_for('category', selected_category = 'Espressos') }}">Espressos</a></li>
+        <li><a href="{{ url_for('category', selected_category = 'Americanos') }}">Americanos</a></li>
+        <li><a href="{{ url_for('category', selected_category = 'Lattes') }}">Lattes</a></li>
+        <li><a href="{{ url_for('category', selected_category = 'Cappucinos') }}">Cappucinos</a></li>
     </ul>
 </header>
-    <main class="main">
-        <div class="container">
-  {% block content %}
-    {# Template inserted here #}
-  {% endblock %}</div>
-    </main>
-
+<main class="main">
+    <div class="container">
+        {% block content %}
+            {# Template inserted here #}
+        {% endblock %}</div>
+</main>
 
 
 </div>
- <footer class="page-footer brown">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
+<footer class="page-footer brown">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
                 <h5 class="white-text">CoffeeBook</h5>
                 <p class="grey-text text-lighten-4">Get inspired or start creating your favourite coffee recipe.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
+            </div>
+            <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Coffes</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Americanos</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Lattes</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Cappucinos</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Espresos</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Americanos</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Lattes</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Cappucinos</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Espresos</a></li>
 
                 </ul>
-              </div>
             </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
             © 2020 MA design
             <a class="grey-text text-lighten-4 right" href="#!">Socials here</a>
-            </div>
-          </div>
-        </footer>
+        </div>
+    </div>
+</footer>
 
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <!-- Materialize - Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Main JavaScript file -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- Materialize - Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Main JavaScript file -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
