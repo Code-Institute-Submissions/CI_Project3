@@ -12,38 +12,53 @@ body {
 main {
     flex: 1 0 auto;
 }
+
 .brand-logo {
     font-family: 'Pacifico', cursive;
     margin-left: 20%;
 }
+
 h1 {
     font-family: 'Pacifico', cursive;
     color: #8d6e63;
     font-size: 5vw;
 }
-h2 {
+
+h2, h3 {
     font-family: 'Pacifico', cursive;
     color: #8d6e63;
 }
-h4 {
+
+h4, h5 {
     color: #a1887f;
 }
+
 p {
     color: #a1887f;
     text-align: center;
 }
-.carousel{
+
+.carousel {
     height: 70vh !important;
 }
+
 .carousel .carousel-item {
     height: 700px !important;
-    width:300px !important;
-    }
-.card .card-image img {
-  width: 100%;
-  height: 330px;
-  object-fit: cover;
+    width: 300px !important;
 }
-.card-content p{
+
+.card .card-image img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+}
+
+.card-content p {
     text-align: left;
+}
+
+.addrecipe {
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }

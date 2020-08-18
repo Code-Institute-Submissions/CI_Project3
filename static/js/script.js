@@ -11,7 +11,7 @@ $(window).resize(function () {
         $('#singlecard').removeClass('large');
     }
     else if ($(window).width() <= 767){
-        $('#singlecard').removeClass('horizontal large');
+        $('#singlecard').removeClass('horizontal');
     }
     else {
         $('#singlecard').addClass('horizontal large');
