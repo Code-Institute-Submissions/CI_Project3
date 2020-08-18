@@ -5,11 +5,11 @@
     <div class="container col s12 m10  grey lighten-5 content-container ">
         <div class="col s12 m7">
             <h2 class="header">{{ recipe.recipe_name }} By {{ recipe.user_name }}</h2>
-            <div class="card horizontal large">
+            <div id="singlecard" class="card horizontal large">
                 <div class="card-image">
                     <img src="{{ recipe.photo_url }}" alt="{{ recipe.recipe_name }}">
                 </div>
-                <div class="card-stacked ">
+                <div class="card-stacked">
 
                     <div class="card-content">
 
@@ -27,7 +27,7 @@
 
                     </div>
                     <div class="card-action">
-                        <div class="center-align mb-20 mt-40">
+                        <div class="center-align">
                             <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn-small darken-3">Back</a>
                             <a href="/edit_recipe/{{ recipe._id }}" class="waves-effect waves-light btn-small blue darken-2"><i
                                     class="small material-icons">edit</i></a>
