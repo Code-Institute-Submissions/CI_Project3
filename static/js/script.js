@@ -8,12 +8,6 @@ $(document).ready(function () {
 
 $(window).resize(function () {
     if ($(window).width() <= 1024) {
-        $('#singlecard').removeClass('large');
-    }
-    else if ($(window).width() <= 767){
-        $('#singlecard').removeClass('horizontal');
-    }
-    else {
-        $('#singlecard').addClass('horizontal large');
+        $('#singlecard').removeClass('horizontal large');
     }
 });
