@@ -1,12 +1,15 @@
+import os
 from flask import Flask, render_template, url_for, request, redirect
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 
+if os.path.exists("env.py"):
+    import env
+
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'recipeDB'
-app.config[
-    "MONGO_URI"] = 'mongodb+srv://db_admin:klop9000@cluster0.18nsj.azure.mongodb.net/recipeDB?retryWrites=true&w=majority'
+app.config["MONGO_DBNAME"] = os.getenv("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 mongo = PyMongo(app)
 
@@ -88,12 +91,12 @@ def delete_recipe(recipe_id):
 
 # Error Handling
 @app.errorhandler(404)
-def page_not_found(error):
+def page_not_found():
     return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
-def something_wrong(error):
+def something_wrong():
     return render_template('500.html'), 500
 
 
