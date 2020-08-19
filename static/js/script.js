@@ -3,6 +3,7 @@ $(document).ready(function () {
     $(".dropdown-trigger").dropdown();
     $('.carousel').carousel();
     $('select').formSelect();
+    $('.modal').modal();
 });
 
 
