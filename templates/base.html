@@ -22,7 +22,7 @@
         <li><a href="{{ url_for('category', selected_category = 'Espressos') }}">Espressos</a></li>
         <li><a href="{{ url_for('category', selected_category = 'Americanos') }}">Americanos</a></li>
         <li><a href="{{ url_for('category', selected_category = 'Lattes') }}">Lattes</a></li>
-        <li><a href="{{ url_for('category', selected_category = 'Cappucinos') }}">Cappucinos</a></li>
+        <li><a href="{{ url_for('category', selected_category = 'Cappuccinos') }}">Cappuccinos</a></li>
     </ul>
     <nav class="brown">
         <div class="nav-wrapper">
@@ -32,7 +32,7 @@
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
                 <!-- Dropdown Trigger -->
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Browse recipes<i
+                <li><a class="dropdown-trigger" data-target="dropdown1">Browse recipes<i
                         class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
         </div>
@@ -44,7 +44,7 @@
         <li><a href="{{ url_for('category', selected_category = 'Espressos') }}">Espressos</a></li>
         <li><a href="{{ url_for('category', selected_category = 'Americanos') }}">Americanos</a></li>
         <li><a href="{{ url_for('category', selected_category = 'Lattes') }}">Lattes</a></li>
-        <li><a href="{{ url_for('category', selected_category = 'Cappucinos') }}">Cappucinos</a></li>
+        <li><a href="{{ url_for('category', selected_category = 'Cappuccinos') }}">Cappuccinos</a></li>
     </ul>
 </header>
 <main class="main">
@@ -55,7 +55,6 @@
 </main>
 
 
-</div>
 <footer class="page-footer brown">
     <div class="container">
         <div class="row">
@@ -64,13 +63,16 @@
                 <p class="grey-text text-lighten-4">Get inspired or start creating your favourite coffee recipe.</p>
             </div>
             <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Coffes</h5>
+                <h5 class="white-text">Coffees</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Americanos</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Lattes</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Cappucinos</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Espresos</a></li>
-
+                    <li><a class="grey-text text-lighten-3"
+                           href="{{ url_for('category', selected_category = 'Espressos') }}">Espressos</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="{{ url_for('category', selected_category = 'Americanos') }}">Americanos</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="{{ url_for('category', selected_category = 'Lattes') }}">Lattes</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="{{ url_for('category', selected_category = 'Cappuccinos') }}">Cappuccinos</a></li>
                 </ul>
             </div>
         </div>
@@ -78,7 +80,6 @@
     <div class="footer-copyright">
         <div class="container">
             © 2020 MA design
-            <a class="grey-text text-lighten-4 right" href="#!">Socials here</a>
         </div>
     </div>
 </footer>
