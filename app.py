@@ -78,7 +78,8 @@ def update_recipe(recipe_id):
         'preparation': request.form.get('preparation')})
     return redirect(url_for('get_recipes'))
 
-#Route for deleting recipe
+
+# Route for deleting recipe
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
