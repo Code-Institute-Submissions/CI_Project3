@@ -20,8 +20,6 @@ As a user, I want to be able to delete recipes. (Delete)
 
 My goal in the design was to create a simple,easy to navigate website with a color neutral scheme.
 This Data Driven Web-application was built to share recipes with other coffee lovers.
-### Structure
-
 
 ### Skeleton
 [Landing wireframe](https://github.com/misza80/CI_Project3/blob/master/static/assets/wireframes/mainpage.png) \
@@ -40,28 +38,35 @@ Colours used are different shades of brown, which corresponds with the color of 
 1.HTML\
 2.CSS\
 3.Materialize\
-4.JavaScript\
-5.jQuery\
-6.Flask\
-7.Google Chrome Developer tools.\
-8.Mongo DB
+4.jQuery\
+5.Flask\
+6.Google Chrome Developer tools \
+7.Mongo DB \
+8.Heroku
 
 ## Features
 
 This site uses collapsible navbar to manage the navigation list on smaller screens.
-Content is dynamically rewritten allowing for faster transitions between the subpages.
-In responses to users actions content is added to the page as necessary.
-User can select categories of tutorials by using a dropdown menu that will filter the content.
+Users can: 
+- See all recipes overview (cards)
+- Select to display only single category of recipes.
+- Add a recipe.
+- Edit recipes.
+- Remove a recipe.
 
-In the future I would like to move the cards content to JSON file.Also add pages for each category in the categories section of the site.
-I would like update the information on the website on a regular basis with new articles and videos .I would also like to add a ability to comment on articles to allow for more user interaction.
+
+In the future I would like to add user registration and login as well as a user dashboard,so users can manage their recipes better. 
 
 ## Testing
-
-
+I tested this project manually. \
+Aim of the test was to verify that the webiste works correctly across different operating systems,browsers and devices.
+Website was tested on Google Chrome,Firefox and Opera browsers in their latest versions.Website was tested on multiple mobile device (iPhone 5,6,XR Samsung Galaxy s5,Apple Ipad) to ensure compatibility and responsivness.
+Chrome developer tools were also used to check for compatibility and responsiveness.
+Collapsible navbar works correctly on mobile devices. 
+Code was validated using W3C, JsHint and PEP8 online validation services.All links were tested manually and will open within same browser tab.I used a lot of console.log() to see if my code us running correctly.
 #### Errors
 
-
+No errors were found in the final deployment.
 
 ## Deployment
 
@@ -91,22 +96,23 @@ This project was then deployed to Heroku to host the live application, following
 7.Set environment variables in Heroku for IP, PORT,SECRET_KEY and MONGO_URI\
 Restart all dynos on Heroku
 
-## Credits
-
-
 
 ### Content
 
+Images for recipes were obtained from Google Images.
 
 
 ### Media
-
-
+Backround by <span>Photo by <a href="https://unsplash.com/@nordwood?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">NordWood Themes</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> \
+Carousel photos by: \
+<a href="https://unsplash.com/@prestongoff?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Preston Goff</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a> \
+<a href="https://unsplash.com/@gtk1x?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Gerson Cifuentes</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a> \
+<a href="https://unsplash.com/@nadyeldems?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Dan Smedley</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a> \
+<a href="https://unsplash.com/@kcatimmer?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Kenny Timmer</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
 
 ### Acknowledgements
 
-Wireframes were made using www.draw.io
-
-Favicon were made using www.favicon.io
+Wireframes were made using www.wireframe.cc
+ 
 
 **This is for educational use.**
