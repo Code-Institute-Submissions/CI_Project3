@@ -4,9 +4,8 @@ The aim of the website is to provide users with information on how to prepare ho
 
 ## Demo
 
-Live demo can be found [here](link).
-
-![](link to screenshot)
+Live demo can be found [here](https://coffeebookci3.herokuapp.com/).
+![](https://github.com/misza80/CI_Project3/blob/master/static/assets/images/coffeebook.png)
 
 ## UX
 
@@ -25,7 +24,9 @@ This Data Driven Web-application was built to share recipes with other coffee lo
 
 
 ### Skeleton
-
+[Landing wireframe](https://github.com/misza80/CI_Project3/blob/master/static/assets/wireframes/mainpage.png) \
+[List of recipes wireframe](https://github.com/misza80/CI_Project3/blob/master/static/assets/wireframes/listofrecipes.png) \
+[Single recipe wireframe](https://github.com/misza80/CI_Project3/blob/master/static/assets/wireframes/singlerecipe.png) 
 
 ### Surface
 
@@ -64,7 +65,7 @@ I would like update the information on the website on a regular basis with new a
 
 ## Deployment
 
-This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch.
+This site is hosted using Heroku, deployed directly from the Github master branch. The deployed site will update automatically upon new commits to the master branch.
 In order to setup github pages I did the following:
 
 - **Created a new repository:**
@@ -75,10 +76,20 @@ In order to setup github pages I did the following:
   For writing code I've used VisualStudio Code (VS Code).
   To get VS Code working correctly with GitHub,you need to install latest version of Git first,after that you can install VS Code.
   When installation finished I have cloned my repository,first by copying to clipboard the link to repository from the github page and then pasting it after `git clone` command into VS Code terminal.
-  After selecting the save folder, proceded to creating files and folders for my project.
+  After selecting the save folder, proceeded to creating files and folders for my project.
   From the source control tab I could stage and commit changes to the repository.
-  After entering the commit message I was able to push the commited changes.
+  After entering the commit message I was able to push the committed changes.
+  
+This project was then deployed to Heroku to host the live application, following the steps below:
 
+1.Log in to Heroku and create a new app called 'coffeebookci3'\
+2.Log in to Heroku in the CLI\
+3.Add the remote Heroku repo\
+4.Create the requirements.txt file by running pip3 freeze --local > requirements.txt in the CLI\
+5.Create a Procfile by running echo web: python run.py > Procfile in the CLI\
+6.Start a web process on Heroku by running heroku ps:scale web=1 in the CLI\
+7.Set environment variables in Heroku for IP, PORT,SECRET_KEY and MONGO_URI\
+Restart all dynos on Heroku
 
 ## Credits
 
