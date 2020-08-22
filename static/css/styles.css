@@ -68,6 +68,13 @@ p {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-.carousel h4{
+
+.carousel h4 {
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    h2 {
+        font-size: 5vw;
+    }
 }
