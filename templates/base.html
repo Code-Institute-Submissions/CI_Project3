@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
-    <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='assets/images/favicon.png') }}" type="image/x-icon">
+    <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='assets/images/favicon.png') }}"
+          type="image/x-icon">
 
 </head>
 <body>
@@ -45,6 +46,7 @@
         <li><a href="{{ url_for('category', selected_category = 'Americanos') }}">Americanos</a></li>
         <li><a href="{{ url_for('category', selected_category = 'Lattes') }}">Lattes</a></li>
         <li><a href="{{ url_for('category', selected_category = 'Cappuccinos') }}">Cappuccinos</a></li>
+        <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
     </ul>
 </header>
 <main class="main">
