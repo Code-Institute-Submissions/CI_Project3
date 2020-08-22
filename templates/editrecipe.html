@@ -7,19 +7,19 @@
             <form class="col s12" action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST">
                 <div class="row">
                     <div class="input-field col s12 m6 l6">
-                        <input id="recipe_name" name="recipe_name" type="text" class="validate"
+                        <input id="recipe_name" name="recipe_name" type="text" class="validate" maxlength="20"
                                value="{{ recipe.recipe_name }}">
                         <label for="recipe_name">Recipe Name</label>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <input id="user_name" name="user_name" type="text" class="validate"
+                        <input id="user_name" name="user_name" type="text" class="validate" maxlength="20"
                                value="{{ recipe.user_name }}">
                         <label for="user_name">User Name</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12 m6 l6">
-                        <select id="category" name="category_name">
+                        <select id="category" name="category_name" required="" aria-required="true">
                             {% for cat in categories %}
                                 <option value="{{ cat.category_name }}">{{ cat.category_name }}</option>
                             {% endfor %}
@@ -29,7 +29,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <input id="photo_url" name="photo_url" type="text" class="validate"
-                               value="{{ recipe.photo_url }}">
+                               value="{{ recipe.photo_url }}" required="" aria-required="true">
                         <label for="photo_url">Add photo</label>
                     </div>
                 </div>
@@ -38,26 +38,26 @@
                 <div class="row">
                     <div class="input-field col s12 m6 l6">
                         <textarea id="preparation_time" name="preparation_time"
-                                  class="materialize-textarea">{{ recipe.preparation_time }}</textarea>
+                                  class="materialize-textarea" required="" aria-required="true" maxlength="20">{{ recipe.preparation_time }}</textarea>
                         <label for="textarea1">Preparation time:</label>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <textarea id="brief_description" name="brief_description"
-                                  class="materialize-textarea">{{ recipe.brief_description }}</textarea>
+                                  class="materialize-textarea" required="" aria-required="true" maxlength="30">{{ recipe.brief_description }}</textarea>
                         <label for="textarea1">Brief description:</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <textarea id="ingredients" name="ingredients"
-                                  class="materialize-textarea">{{ recipe.ingredients }}</textarea>
+                                  class="materialize-textarea" required="" aria-required="true" maxlength="100">{{ recipe.ingredients }}</textarea>
                         <label for="textarea1">Ingredients:</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <textarea id="preparation" name="preparation"
-                                  class="materialize-textarea">{{ recipe.preparation }}</textarea>
+                                  class="materialize-textarea" required="" aria-required="true" maxlength="400">{{ recipe.preparation }}</textarea>
                         <label for="textarea1">Preparation:</label>
                     </div>
                 </div>
