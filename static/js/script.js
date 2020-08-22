@@ -2,7 +2,6 @@ $(document).ready(function () {
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
     $('.carousel').carousel();
-
     $('.modal').modal();
     $('input#input_text, textarea#textarea2').characterCounter();
     $('select').formSelect();
@@ -16,7 +15,7 @@ $(document).ready(function () {
 });
 
 
-$(window).resize(function () {
+$(window).on('resize', function () {
     if ($(window).width() <= 1024) {
         $('#singlecard').removeClass('horizontal large');
     }
