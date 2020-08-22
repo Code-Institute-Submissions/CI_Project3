@@ -7,17 +7,17 @@
             <form class="col s12" action="{{ url_for('insert_recipe') }}" method="POST">
                 <div class="row">
                     <div class="input-field col s12 m6 l6">
-                        <input id="recipe_name" name="recipe_name" type="text" class="validate">
+                        <input id="recipe_name" name="recipe_name" type="text" class="validate" required="" aria-required="true" maxlength="30">
                         <label for="recipe_name">Recipe Name</label>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <input id="user_name" name="user_name" type="text" class="validate">
+                        <input id="user_name" name="user_name" type="text" class="validate" required="" aria-required="true" maxlength="30">
                         <label for="user_name">User Name</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12 m6 l6">
-                        <select id="category" name="category_name">
+                        <select id="category" name="category_name" required="" aria-required="true">
                             <option value="" disabled selected>Choose category</option>
                             {% for cat in categories %}
                                 <option value="{{ cat.category_name }}">{{ cat.category_name }}</option>
@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <input id="photo_url" name="photo_url" type="text" class="validate">
+                        <input id="photo_url" name="photo_url" type="url" class="validate" required="" aria-required="true">
                         <label for="photo_url">Link to image(paste your image url here)</label>
                     </div>
                 </div>
@@ -35,24 +35,24 @@
 
                 <div class="row">
                     <div class="input-field col s12 m6 l6">
-                        <textarea id="preparation_time" name="preparation_time" class="materialize-textarea"></textarea>
+                        <textarea id="preparation_time" name="preparation_time" class="materialize-textarea" maxlength="20"></textarea>
                         <label for="textarea1">Preparation time</label>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <textarea id="brief_description" name="brief_description"
-                                  class="materialize-textarea"></textarea>
+                                  class="materialize-textarea" data-length="50" required="" aria-required="true" maxlength="30"></textarea>
                         <label for="textarea1">Brief description</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea id="ingredients" name="ingredients" class="materialize-textarea"></textarea>
+                        <textarea id="ingredients" name="ingredients" class="materialize-textarea" data-length="100" required="" aria-required="true" maxlength="100"></textarea>
                         <label for="textarea1">Ingredients</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea id="preparation" name="preparation" class="materialize-textarea"></textarea>
+                        <textarea id="preparation" name="preparation" class="materialize-textarea" data-length="400" required="" aria-required="true" maxlength="400"></textarea>
                         <label for="textarea1">Preparation</label>
                     </div>
                 </div>
