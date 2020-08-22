@@ -18,20 +18,20 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/home/')
 def home():
-    return render_template('home.html')
+    return render_template('home.html', page_title="Home")
 
 
 # Route to recipes page
 @app.route('/recipes/')
 def get_recipes():
-    return render_template('recipes.html', recipes=mongo.db.recipes.find())
+    return render_template('recipes.html', recipes=mongo.db.recipes.find(), page_title="All recipes")
 
 
 # Route to single recipe
 @app.route('/recipe/<recipe_id>')
 def single_recipe(recipe_id):
     this_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("recipe.html", recipe=this_recipe)
+    return render_template("recipe.html", recipe=this_recipe, page_title="Home")
 
 
 # Route to recipes in a single category
@@ -40,14 +40,15 @@ def category(selected_category):
     all_recipes = mongo.db.recipes.find()
     return render_template("category.html",
                            recipes=all_recipes,
-                           selected_category=selected_category)
+                           selected_category=selected_category,
+                           page_title=selected_category + " Recipes")
 
 
 # Route for adding recipes.
 @app.route('/addrecipe/')
 def add_recipe():
     categories = list(mongo.db.categories.find().sort('category_name', pymongo.ASCENDING))
-    return render_template('addrecipe.html', categories=categories)
+    return render_template('addrecipe.html', categories=categories, page_title="Add Your Own Recipe")
 
 
 @app.route('/insert_recipe/', methods=['POST'])
@@ -63,7 +64,7 @@ def edit_recipe(recipe_id):
     this_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = list(mongo.db.categories.find())
     return render_template('editrecipe.html', recipe=this_recipe,
-                           categories=categories)
+                           categories=categories, page_title="Edit Recipe")
 
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
