@@ -1,37 +1,32 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+    <h2>Recipes</h2>
     <div class="container col s12 m10  grey-text text-darken-2 content-container ">
         <div class="row">
 
+                {% for recipe in recipes %}
+                    {% if recipe.category_name== selected_category %}
 
-            {% for recipe in recipes %}
-                {% if recipe.category_name== selected_category %}
-                    <h2>{{ recipe.category_name }}</h2>
-                    <div class="col s12 m6 l6 xl4 recipe-card">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{{ recipe.photo_url }}" alt=" {{ recipe.recipe_name }}">
-                            </div>
-                            <div class="card-content">
-                                <h6> {{ recipe.recipe_name }}</h6>
-                                <p class="grey-text">{{ recipe.category_name }}</p>
-                                <p class="grey-text author-text">By: <span
-                                        class="grey-text text-darken-3">{{ recipe.user_name }}</span></p>
-                            </div>
-                            <div class="card-action">
-                                <a href="/recipe/{{ recipe._id }}" class="waves-effect waves-light btn-small ">View</a>
-                                <a href="#" class="waves-effect waves-light btn-small blue darken-2"><i
-                                        class="small material-icons">edit</i></a>
-                                <a href="#" class="waves-effect waves-light btn-small red darken-2  modal-trigger"><i
-                                        class="small material-icons">delete</i></a>
+                        <div class="col s12 m6 l6 xl4 recipe-card">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="{{ recipe.photo_url }}" alt=" {{ recipe.recipe_name }}">
+                                </div>
+                                <div class="card-content">
+                                    <h6> {{ recipe.recipe_name }}</h6>
+                                    <p class="grey-text">{{ recipe.category_name }}</p>
+                                    <p class="grey-text author-text">By: <span
+                                            class="grey-text text-darken-3">{{ recipe.user_name }}</span></p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="/recipe/{{ recipe._id }}"
+                                       class="waves-effect waves-light btn-small ">View</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-
+                    {% endif %}
+                {% endfor %}
         </div>
     </div>
 
