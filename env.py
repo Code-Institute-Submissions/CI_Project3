@@ -1,6 +1,6 @@
 import os
 
-# Create a secret key
+# Create a secret key1
 os.environ["SECRET_KEY"] = "Dyzio"
 # Storing the MONGO_URI environment variable
 os.environ[
